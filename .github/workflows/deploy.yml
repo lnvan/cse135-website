@@ -16,5 +16,5 @@ jobs:
           
           script: |
             cd /var/www/lnvan.site
-            git pull 
+            sudo git pull 
             echo 'Deployment successful to digital ocean' 
