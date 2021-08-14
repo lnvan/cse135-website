@@ -1,0 +1,89 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="HW1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lam's CSE 135 Website</title>
+	<link rel="shortcut icon" type="image/jpg" href="images/fav-icon.jpeg"/>
+	<style>
+		h1 {
+			color: blue;
+		}	
+
+		header {
+			color: red;
+		}	
+	</style>
+</head>
+<body>
+	<h1>
+		LAM VAN's CSE135 WEBSITE
+	</h1>
+	<h2>
+		Summer Session II 2021
+	</h2>
+	<p>
+	<header>
+		I am Lam Van. I am the only member of this group. 
+	</header>	
+	</br>
+	<button id="alert">
+		Alert
+	</button>
+	<button id="confirm">
+		Confirm
+	</button>
+	<button id="prompt">
+		Prompt
+	</button>
+	<br/>
+	<br/>
+	<output>
+	</output>
+	</p>
+	<script>
+		function resetOutput() {
+			const tag = document.querySelector("output");
+			tag.textContent = ``; 
+		}
+
+		function raiseAlert() {
+			setTimeout( () => {alert('Alert pressed!!!');}, 0);	
+			resetOutput();
+		}
+
+		const buttonAlert = document.getElementById("alert");
+		buttonAlert.addEventListener("click",raiseAlert);
+
+		
+		function raiseConfirm() {
+			setTimeout( () => {
+				const answer = window.confirm('Do you confirm this?');
+				const tag = document.querySelector("output");
+				tag.textContent = `The value returned by the confirm method is : ${answer}`;}, 0);	
+			resetOutput();
+
+		}
+
+		const buttonConfirm = document.getElementById("confirm");
+		buttonConfirm.addEventListener("click",raiseConfirm);
+
+		function raisePrompt() {
+			setTimeout( () => {
+				const name = prompt('What is your name?');
+				const tag = document.querySelector("output");
+				if (name) {
+					tag.textContent = `Prompt result : ${name}`; 
+				}
+				else {
+					tag.textContent = `User didn't enter anything`; 
+				} }, 0);
+			resetOutput();
+		}
+			
+		const buttonPrompt = document.getElementById("prompt");
+		buttonPrompt.addEventListener("click",raisePrompt);
+
+	</script>
+</body>
+</html>
