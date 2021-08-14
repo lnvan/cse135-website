@@ -16,5 +16,5 @@ jobs:
      
           script: |
             cd /var/www/lnvan.site
-            sudo git clone https://github.com/lnvan/cse135-website.git 
+            git clone https://github.com/lnvan/cse135-website.git 
             echo 'Deployment successful to digital ocean' 
